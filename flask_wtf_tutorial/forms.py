@@ -48,5 +48,5 @@ class SignupForm(FlaskForm):
                                  ('Pokemon Trainer', 'pokemon')])
     website = StringField('Website', validators=[URL()])
     birthday = DateField('Your Birthday')
-    recaptcha = RecaptchaField()
+    #recaptcha = RecaptchaField()
     submit = SubmitField('Submit')
