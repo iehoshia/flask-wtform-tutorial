@@ -12,9 +12,11 @@ def create_app():
     app.config['RECAPTCHA_PUBLIC_KEY'] = 'iubhiukfgjbkhfvgkdfm'
     app.config['RECAPTCHA_PARAMETERS'] = {'size': '100%'}
 
-    db.init_app(app)
-    migrate.init_app(app,db)
-
     with app.app_context():
-        from . import routes, models
+
+        db.init_app(app)
+        migrate.init_app(app,db)
         return app
+    #return app
+
+from flask_wtf_tutorial import routes, models

@@ -2,12 +2,10 @@ from flask import url_for, render_template, redirect
 from flask import current_app as app
 from .forms import ContactForm, SignupForm
 
-
 @app.route('/')
 def home():
     return render_template('index.html',
                            template='home-template')
-
 
 @app.route('/contact', methods=('GET', 'POST'))
 def contact():
